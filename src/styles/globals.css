@@ -1,2 +1,6 @@
 @import "tailwindcss";
 
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+  
