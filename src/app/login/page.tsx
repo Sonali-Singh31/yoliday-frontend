@@ -46,9 +46,14 @@ export default function Login() {
       setTimeout(() => {
         router.push("/");
       }, 500);
-    } catch (err: any) {
+    }catch (err: unknown) {
+      let errorMessage = "Google sign-in failed.";
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      }
+    
       console.error("Error logging in:", err);
-      toast.error(err.message || "Google sign-in failed.");
+      toast.error(errorMessage);
     }
   };
 
